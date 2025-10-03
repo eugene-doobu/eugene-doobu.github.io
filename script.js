@@ -159,7 +159,7 @@ scrollProgress.style.cssText = `
     left: 0;
     width: 0%;
     height: 3px;
-    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(90deg, #ffffff 0%, #cccccc 100%);
     z-index: 9999;
     transition: width 0.1s ease;
 `;
@@ -397,6 +397,6 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 // ============================================
 // Console Message
 // ============================================
-console.log('%c🎮 Welcome to Doobu Games!', 'font-size: 20px; font-weight: bold; color: #667eea;');
-console.log('%c✨ Indie Game Studio | Innovative Experiences', 'font-size: 14px; color: #764ba2;');
+console.log('%c� 간식축내는 스튜디오에 오신 것을 환영합니다!', 'font-size: 20px; font-weight: bold; color: #ffffff;');
+console.log('%c✨ Indie Game Studio | Innovative Experiences', 'font-size: 14px; color: #cccccc;');
 console.log('%c💡 Try the Konami Code for a surprise! (↑↑↓↓←→←→BA)', 'font-size: 12px; color: #888;');
