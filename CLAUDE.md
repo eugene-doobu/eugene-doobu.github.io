@@ -1,4 +1,4 @@
-# Doobu Games - 게임 스튜디오 홍보 페이지 개발 가이드
+# 간식축내는 스튜디오 - 게임 스튜디오 홍보 페이지 개발 가이드
 
 > **최종 업데이트**: 2025년 1월  
 > **프로젝트 목적**: 개인 포트폴리오 → 게임 스튜디오 홍보 페이지로 전환  
@@ -17,7 +17,7 @@
 - **목적**: 게임 스튜디오 홍보 및 게임 마케팅
 - **타겟**: 실제 플레이어, 게임 유저
 - **컨텐츠**: 게임 홍보, 업데이트 소식, 이벤트 공지
-- **스튜디오명**: **Doobu Games** (인디 게임 스튜디오)
+- **스튜디오명**: **간식축내는 스튜디오** (Snack Eater Studio / おやつ食べるスタジオ)
 
 ---
 
@@ -86,7 +86,7 @@ eugene-doobu.github.io/
 ### 1. Hero Section (스튜디오 소개)
 ```html
 <section class="hero studio-hero">
-  <h1 class="studio-title">DOOBU GAMES</h1>
+  <h1 class="studio-title">간식축내는 스튜디오</h1>
   <p class="studio-tagline">혁신적인 게임 경험을 만드는 인디 게임 스튜디오</p>
   <p class="studio-description">새로운 기술과 창의적인 아이디어로...</p>
 </section>
@@ -128,7 +128,7 @@ eugene-doobu.github.io/
     "support": "Support"
   },
   "hero": {
-    "studioName": "DOOBU GAMES",
+    "studioName": "간식축내는 스튜디오",
     "tagline": "혁신적인 게임 경험을 만드는 인디 게임 스튜디오"
   },
   "games": {
@@ -288,7 +288,7 @@ projects/
 
 | 항목 | Before (포트폴리오) | After (스튜디오) |
 |------|---------------------|------------------|
-| **타이틀** | Eugene Doobu | DOOBU GAMES |
+| **타이틀** | Eugene Doobu | 간식축내는 스튜디오 |
 | **목적** | 개인 경력 | 게임 홍보 |
 | **About** | 개인 소개 | 스튜디오 소개 |
 | **Projects** | 기술 중심 | 게임 중심 |
@@ -368,4 +368,4 @@ projects/
 
 ---
 
-**© 2025 Doobu Games. All rights reserved.**
+**© 2025 간식축내는 스튜디오. All rights reserved.**

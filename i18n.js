@@ -112,7 +112,7 @@ class LocalizationManager {
         this.updateArrayTranslations();
         
         // Update document title
-        document.title = `Doobu Games - Indie Game Studio`;
+        document.title = `Snack Eater Studio - Indie Game Studio`;
         
         // 디버그 로그
         console.log(`[i18n] Translations applied: ${this.currentLang}`);

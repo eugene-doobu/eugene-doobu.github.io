@@ -60,12 +60,12 @@
     },
     "placeholder2": {
       "title": "Studio News",
-      "excerpt": "Latest updates from Doobu Games."
+      "excerpt": "Latest updates from Snack Eater Studio."
     }
   },
   "about": {
     "title": "✨ About Studio",
-    "heading": "Doobu Games",
+    "heading": "Snack Eater Studio",
     "description1": "An indie game studio creating special gaming experiences with new technologies and creative ideas.",
     "description2": "We provide innovative and immersive games to players using various technologies like Unity and WebGPU. Our goal is to create experiences that move players beyond just making games.",
     "contact": "Contact & Links",

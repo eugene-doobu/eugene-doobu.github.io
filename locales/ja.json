@@ -60,12 +60,12 @@
     },
     "placeholder2": {
       "title": "スタジオニュース",
-      "excerpt": "Doobu Gamesの最新情報をお届けします。"
+      "excerpt": "おやつ食べるスタジオの最新情報をお届けします。"
     }
   },
   "about": {
     "title": "✨ About Studio",
-    "heading": "Doobu Games",
+    "heading": "おやつ食べるスタジオ",
     "description1": "新しい技術と創造的なアイデアで特別なゲーム体験を作るインディーゲームスタジオです。",
     "description2": "Unity、WebGPUなど様々な技術を活用して、プレイヤーに革新的で没入感のあるゲームを提供します。私たちの目標は単なるゲームを超えて、プレイヤーに感動を与える体験を作ることです。",
     "contact": "Contact & Links",
