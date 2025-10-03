@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "games": "ゲーム",
+    "news": "ニュース",
+    "about": "について",
+    "support": "サポート"
+  },
+  "hero": {
+    "studioName": "おやつ食べるスタジオ",
+    "tagline": "革新的なゲーム体験を作るインディーゲームスタジオ",
+    "description": "新しい技術と創造的なアイデアでプレイヤーに特別な体験を提供します",
+    "exploreGames": "ゲームを見る",
+    "latestNews": "最新ニュース",
+    "scrollDown": "スクロールダウン"
+  },
+  "games": {
+    "title": "🎮 私たちのゲーム",
+    "subtitle": "おやつ食べるスタジオが送るゲーム",
+    "filterAll": "全て",
+    "filterPC": "PC",
+    "filterMobile": "モバイル",
+    "filterWeb": "ウェブ",
+    "playNow": "今すぐプレイ",
+    "news": "ニュース",
+    "support": "お問い合わせ",
+    "followUs": "フォローする",
+    "status": {
+      "available": "プレイ可能",
+      "comingSoon": "開発中"
+    },
+    "game3daudio": {
+      "title": "3D Audio Experience",
+      "genre": "インタラクティブオーディオ体験",
+      "description": "WebGPU技術を活用した没入型3D空間オーディオ体験。リアルタイムオーディオ処理とビジュアルフィードバックで新次元のサウンドを体験してください。",
+      "tags": ["WebGPU", "3D Audio", "インタラクティブ"]
+    },
+    "comingSoon": {
+      "title": "新しいゲーム準備中",
+      "genre": "TBA",
+      "description": "より面白く革新的なゲームを準備しています。近日公開予定の新プロジェクトをお楽しみに!"
+    }
+  },
+  "news": {
+    "title": "📢 最新ニュース",
+    "subtitle": "ゲームアップデートとイベント",
+    "viewAll": "全てのニュースを見る",
+    "badge": {
+      "update": "アップデート",
+      "event": "イベント",
+      "announcement": "お知らせ"
+    },
+    "update3daudio": {
+      "title": "3D Audio Experience 正式リリース！",
+      "excerpt": "WebGPUベースの革新的な3Dオーディオ体験が公開されました。今すぐプレイしてください！"
+    },
+    "placeholder1": {
+      "title": "ローンチ記念イベント準備中",
+      "excerpt": "特別なイベントが始まります。お楽しみに！"
+    },
+    "placeholder2": {
+      "title": "スタジオニュース",
+      "excerpt": "Doobu Gamesの最新情報をお届けします。"
+    }
+  },
+  "about": {
+    "title": "✨ About Studio",
+    "heading": "Doobu Games",
+    "description1": "新しい技術と創造的なアイデアで特別なゲーム体験を作るインディーゲームスタジオです。",
+    "description2": "Unity、WebGPUなど様々な技術を活用して、プレイヤーに革新的で没入感のあるゲームを提供します。私たちの目標は単なるゲームを超えて、プレイヤーに感動を与える体験を作ることです。",
+    "contact": "Contact & Links",
+    "links": {
+      "github": "GitHub",
+      "support": "サポート",
+      "blog": "ブログ",
+      "youtube": "YouTube"
+    },
+    "values": {
+      "creativity": "創造性",
+      "creativityDesc": "新しいアイデアでユニークなゲーム体験",
+      "innovation": "革新",
+      "innovationDesc": "最新技術を活用した次世代ゲーム",
+      "passion": "情熱",
+      "passionDesc": "ゲームへの真心とプレイヤーへの愛"
+    }
+  },
+  "footer": {
+    "tagline": "革新的なゲーム体験を作るインディースタジオ",
+    "games": "ゲーム",
+    "support": "サポート",
+    "contactUs": "お問い合わせ",
+    "github": "GitHub",
+    "rights": "© 2025 おやつ食べるスタジオ. All rights reserved.",
+    "viewSource": "GitHubでソースを見る"
+  }
+}

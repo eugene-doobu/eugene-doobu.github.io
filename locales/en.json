@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "home": "Home",
+    "games": "Games",
+    "news": "News",
+    "about": "About",
+    "support": "Support"
+  },
+  "hero": {
+    "studioName": "Snack Eater Studio",
+    "tagline": "Indie Game Studio Creating Innovative Gaming Experiences",
+    "description": "Delivering unique experiences to players with new technologies and creative ideas",
+    "exploreGames": "Explore Games",
+    "latestNews": "Latest News",
+    "scrollDown": "Scroll Down"
+  },
+  "games": {
+    "title": "🎮 Our Games",
+    "subtitle": "Games from Snack Eater Studio",
+    "filterAll": "All",
+    "filterPC": "PC",
+    "filterMobile": "Mobile",
+    "filterWeb": "Web",
+    "playNow": "Play Now",
+    "news": "News",
+    "support": "Support",
+    "followUs": "Follow Us",
+    "status": {
+      "available": "Available Now",
+      "comingSoon": "In Development"
+    },
+    "game3daudio": {
+      "title": "3D Audio Experience",
+      "genre": "Interactive Audio Experience",
+      "description": "Immersive 3D spatial audio experience using WebGPU technology. Experience a new dimension of sound with real-time audio processing and visual feedback.",
+      "tags": ["WebGPU", "3D Audio", "Interactive"]
+    },
+    "comingSoon": {
+      "title": "New Game Coming Soon",
+      "genre": "TBA",
+      "description": "We're preparing more fun and innovative games. Stay tuned for our upcoming projects!"
+    }
+  },
+  "news": {
+    "title": "📢 Latest News",
+    "subtitle": "Game Updates and Events",
+    "viewAll": "View All News",
+    "badge": {
+      "update": "Update",
+      "event": "Event",
+      "announcement": "Notice"
+    },
+    "update3daudio": {
+      "title": "3D Audio Experience Official Release!",
+      "excerpt": "Revolutionary WebGPU-based 3D audio experience is now live. Play now!"
+    },
+    "placeholder1": {
+      "title": "Launch Event Coming Soon",
+      "excerpt": "Special events are starting soon. Stay tuned!"
+    },
+    "placeholder2": {
+      "title": "Studio News",
+      "excerpt": "Latest updates from Doobu Games."
+    }
+  },
+  "about": {
+    "title": "✨ About Studio",
+    "heading": "Doobu Games",
+    "description1": "An indie game studio creating special gaming experiences with new technologies and creative ideas.",
+    "description2": "We provide innovative and immersive games to players using various technologies like Unity and WebGPU. Our goal is to create experiences that move players beyond just making games.",
+    "contact": "Contact & Links",
+    "links": {
+      "github": "GitHub",
+      "support": "Support",
+      "blog": "Blog",
+      "youtube": "YouTube"
+    },
+    "values": {
+      "creativity": "Creativity",
+      "creativityDesc": "Unique gaming experiences with new ideas",
+      "innovation": "Innovation",
+      "innovationDesc": "Next-gen games with cutting-edge tech",
+      "passion": "Passion",
+      "passionDesc": "Sincere love for games and players"
+    }
+  },
+  "footer": {
+    "tagline": "Indie studio creating innovative gaming experiences",
+    "games": "Games",
+    "support": "Support",
+    "contactUs": "Contact Us",
+    "github": "GitHub",
+    "rights": "© 2025 Snack Eater Studio. All rights reserved.",
+    "viewSource": "View Source on GitHub"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "home": "Home",
+    "games": "Games",
+    "news": "News",
+    "about": "About",
+    "support": "Support"
+  },
+  "hero": {
+    "studioName": "간식축내는 스튜디오",
+    "tagline": "혁신적인 게임 경험을 만드는 인디 게임 스튜디오",
+    "description": "새로운 기술과 창의적인 아이디어로 플레이어에게 특별한 경험을 선사합니다",
+    "exploreGames": "게임 둘러보기",
+    "latestNews": "최신 소식",
+    "scrollDown": "Scroll Down"
+  },
+  "games": {
+    "title": "🎮 우리의 게임",
+    "subtitle": "간식축내는 스튜디오가 선보이는 게임들",
+    "filterAll": "전체",
+    "filterPC": "PC",
+    "filterMobile": "모바일",
+    "filterWeb": "웹",
+    "playNow": "지금 플레이",
+    "news": "소식",
+    "support": "문의",
+    "followUs": "팔로우하기",
+    "status": {
+      "available": "플레이 가능",
+      "comingSoon": "개발 중"
+    },
+    "game3daudio": {
+      "title": "3D Audio Experience",
+      "genre": "인터랙티브 오디오 체험",
+      "description": "WebGPU 기술을 활용한 몰입형 3D 공간 오디오 체험. 실시간 오디오 처리와 시각적 피드백으로 새로운 차원의 사운드를 경험하세요.",
+      "tags": ["WebGPU", "3D Audio", "Interactive"]
+    },
+    "comingSoon": {
+      "title": "새로운 게임 준비중",
+      "genre": "TBA",
+      "description": "더 재미있고 혁신적인 게임을 준비하고 있습니다. 곧 공개될 새로운 프로젝트를 기대해주세요!"
+    }
+  },
+  "news": {
+    "title": "📢 최신 소식",
+    "subtitle": "게임 업데이트 및 이벤트 소식",
+    "viewAll": "전체 소식 보기",
+    "badge": {
+      "update": "업데이트",
+      "event": "이벤트",
+      "announcement": "공지"
+    },
+    "update3daudio": {
+      "title": "3D Audio Experience 정식 출시!",
+      "excerpt": "WebGPU 기반의 혁신적인 3D 오디오 체험이 공개되었습니다. 지금 바로 플레이해보세요!"
+    },
+    "placeholder1": {
+      "title": "런칭 기념 이벤트 준비중",
+      "excerpt": "곧 특별한 이벤트가 시작됩니다. 기대해주세요!"
+    },
+    "placeholder2": {
+      "title": "스튜디오 소식",
+      "excerpt": "Doobu Games의 새로운 소식을 전해드립니다."
+    }
+  },
+  "about": {
+    "title": "✨ About Studio",
+    "heading": "Doobu Games",
+    "description1": "새로운 기술과 창의적인 아이디어로 특별한 게임 경험을 만드는 인디 게임 스튜디오입니다.",
+    "description2": "Unity, WebGPU 등 다양한 기술을 활용하여 플레이어들에게 혁신적이고 몰입감 있는 게임을 제공합니다. 우리의 목표는 단순한 게임을 넘어, 플레이어에게 감동을 주는 경험을 만드는 것입니다.",
+    "contact": "Contact & Links",
+    "links": {
+      "github": "GitHub",
+      "support": "Support",
+      "blog": "Blog",
+      "youtube": "YouTube"
+    },
+    "values": {
+      "creativity": "창의성",
+      "creativityDesc": "새로운 아이디어로 독특한 게임 경험",
+      "innovation": "혁신",
+      "innovationDesc": "최신 기술을 활용한 차세대 게임",
+      "passion": "열정",
+      "passionDesc": "게임에 대한 진심과 플레이어 사랑"
+    }
+  },
+  "footer": {
+    "tagline": "혁신적인 게임 경험을 만드는 인디 스튜디오",
+    "games": "Games",
+    "support": "Support",
+    "contactUs": "문의하기",
+    "github": "GitHub",
+    "rights": "© 2025 간식축내는 스튜디오. All rights reserved.",
+    "viewSource": "View Source on GitHub"
+  }
+}

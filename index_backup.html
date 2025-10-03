@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doobu Games - Indie Game Studio</title>
-    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
-                <h1>간식축내는 스튜디오</h1>
+                <h1>DOOBU GAMES</h1>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" data-i18n="nav.home">Home</a></li>
@@ -37,7 +38,7 @@
     <section id="home" class="hero studio-hero">
         <div class="hero-background"></div>
         <div class="hero-content">
-            <h1 class="studio-title" data-i18n="hero.studioName">간식축내는 스튜디오</h1>
+            <h1 class="studio-title" data-i18n="hero.studioName">DOOBU GAMES</h1>
             <p class="studio-tagline" data-i18n="hero.tagline">
                 혁신적인 게임 경험을 만드는 인디 게임 스튜디오
             </p>
@@ -50,6 +51,10 @@
                 <a href="#news" class="btn btn-secondary">
                     <span>📢</span> <span data-i18n="hero.latestNews">최신 소식</span>
                 </a>
+            </div>
+            <div class="scroll-indicator">
+                <span data-i18n="hero.scrollDown">Scroll Down</span>
+                <div class="scroll-arrow">↓</div>
             </div>
         </div>
     </section>
@@ -70,12 +75,7 @@
         </div>
 
         <div class="games-container">
-            <!-- 
-                게임 카드 순서: 최신 게임이 위에 오도록 배치
-                새 게임 추가 시 이 주석 바로 아래에 추가하세요
-            -->
-            
-            <!-- Game Card: 3D Audio Experience (2025.01) -->
+            <!-- Game Card: 3D Audio Experience -->
             <div class="game-card krafton-style" data-platforms="web pc">
                 <div class="game-thumbnail">
                     <img src="projects/3daudio/assets/img/webgpu.png" alt="3D Audio Experience" onerror="this.src='https://via.placeholder.com/1200x600/764ba2/ffffff?text=3D+Audio+Experience'">
@@ -214,19 +214,26 @@
                         우리의 목표는 단순한 게임을 넘어, 플레이어에게 감동을 주는 경험을 만드는 것입니다.
                     </p>
 
+                    <h4 data-i18n="about.techStack">주요 기술</h4>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Unity</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">WebGPU</span>
+                        <span class="tech-tag">3D Audio</span>
+                        <span class="tech-tag">VR/AR</span>
+                        <span class="tech-tag">Real-time Graphics</span>
+                    </div>
+
                     <h4 data-i18n="about.contact">Contact & Links</h4>
                     <div class="contact-links">
                         <a href="https://github.com/eugene-doobu" target="_blank" class="contact-link">
                             <span>📱</span> <span data-i18n="about.links.github">GitHub</span>
                         </a>
                         <a href="https://github.com/eugene-doobu/eugene-doobu.github.io/issues" target="_blank" class="contact-link">
-                            <span>�</span> <span data-i18n="about.links.support">Support</span>
+                            <span>💬</span> <span data-i18n="about.links.support">Support</span>
                         </a>
-                        <a href="https://velog.io/@eugene-doobu/posts" target="_blank" class="contact-link">
-                            <span>�</span> <span data-i18n="about.links.blog">Blog</span>
-                        </a>
-                        <a href="https://www.youtube.com/@SnackKillerCat" target="_blank" class="contact-link">
-                            <span>🎥</span> <span data-i18n="about.links.youtube">YouTube</span>
+                        <a href="https://github.com/eugene-doobu?tab=repositories" target="_blank" class="contact-link">
+                            <span>📦</span> <span data-i18n="about.links.projects">Projects</span>
                         </a>
                     </div>
                 </div>
@@ -257,7 +264,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3 data-i18n="hero.studioName">간식축내는 스튜디오</h3>
+                    <h3>DOOBU GAMES</h3>
                     <p data-i18n="footer.tagline">혁신적인 게임 경험을 만드는 인디 스튜디오</p>
                 </div>
                 <div class="footer-links">
@@ -277,8 +284,8 @@
         </div>
     </footer>
 
-    <!-- Scripts (버전 번호로 캐시 방지) -->
-    <script src="i18n.js?v=2"></script>
-    <script src="script.js?v=2"></script>
+    <!-- Scripts -->
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

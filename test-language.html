@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        #log {
+            background: #f0f0f0;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-family: monospace;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Language Switching Test</h1>
+    
+    <div class="test-section">
+        <h2>Language Selector</h2>
+        <select id="language-selector">
+            <option value="ko">🇰🇷 한국어</option>
+            <option value="en">🇺🇸 English</option>
+            <option value="ja">🇯🇵 日本語</option>
+        </select>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Translations</h2>
+        <p><strong>Navigation Home:</strong> <span data-i18n="nav.home">Home</span></p>
+        <p><strong>Navigation Games:</strong> <span data-i18n="nav.games">Games</span></p>
+        <p><strong>Hero Studio Name:</strong> <span data-i18n="hero.studioName">DOOBU GAMES</span></p>
+        <p><strong>Hero Tagline:</strong> <span data-i18n="hero.tagline">혁신적인 게임 경험을 만드는 인디 게임 스튜디오</span></p>
+        <p><strong>Games Title:</strong> <span data-i18n="games.title">🎮 우리의 게임</span></p>
+    </div>
+
+    <div class="test-section">
+        <h2>Console Log</h2>
+        <div id="log"></div>
+    </div>
+
+    <script>
+        // Console log capture
+        const logDiv = document.getElementById('log');
+        const originalLog = console.log;
+        const originalError = console.error;
+        
+        console.log = function(...args) {
+            originalLog.apply(console, args);
+            logDiv.innerHTML += `<div style="color: blue;">[LOG] ${args.join(' ')}</div>`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+        };
+        
+        console.error = function(...args) {
+            originalError.apply(console, args);
+            logDiv.innerHTML += `<div style="color: red;">[ERROR] ${args.join(' ')}</div>`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+        };
+    </script>
+
+    <script src="i18n.js"></script>
+    <script>
+        const languageSelector = document.getElementById('language-selector');
+        
+        if (languageSelector) {
+            console.log('[Test] Language selector found');
+            
+            languageSelector.addEventListener('change', async (e) => {
+                const selectedLang = e.target.value;
+                console.log(`[Test] Changing to: ${selectedLang}`);
+                
+                if (window.i18n) {
+                    await window.i18n.changeLanguage(selectedLang);
+                    console.log('[Test] Change completed');
+                } else {
+                    console.error('[Test] window.i18n not available!');
+                }
+            });
+        } else {
+            console.error('[Test] Language selector not found!');
+        }
+
+        // Wait for i18n to be ready
+        setTimeout(() => {
+            if (window.i18n) {
+                console.log('[Test] i18n initialized successfully');
+                console.log('[Test] Current language:', window.i18n.currentLang);
+            } else {
+                console.error('[Test] i18n not initialized!');
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
