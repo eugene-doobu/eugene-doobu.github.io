@@ -224,7 +224,7 @@ projects/
 <!-- 새 게임은 여기에 추가 (Coming Soon 카드 위에) -->
 
 <!-- Game Card: [새 게임 이름] (2025.XX) -->
-<div class="game-card krafton-style" data-platforms="pc mobile">
+<div class="game-card" data-platforms="pc mobile">
   <div class="game-thumbnail">
     <img src="projects/[게임명]/assets/img/thumbnail.png" alt="...">
     <div class="game-overlay">

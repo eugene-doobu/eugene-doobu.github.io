@@ -822,7 +822,7 @@ a:visited {
 }
 
 /* ============================================
-   크래프톤 스타일 - 게임 스튜디오 디자인
+   Studio Design - Game Studio Layout
    ============================================ */
 
 /* Studio Hero Section */
@@ -856,7 +856,7 @@ a:visited {
     padding-bottom: var(--spacing-md);
 }
 
-/* Games Section - 크래프톤 스타일 */
+/* Games Section */
 .games-section {
     padding: var(--spacing-xl) 0;
     background: var(--bg-primary);
@@ -922,7 +922,7 @@ a:visited {
     gap: var(--spacing-lg);
 }
 
-/* Game Card - 크래프톤 큰 카드 스타일 */
+/* Game Card - Large Card Style */
 .game-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1323,7 +1323,7 @@ a:visited {
     color: #333333;
 }
 
-/* Responsive - 크래프톤 스타일 */
+/* Responsive Design */
 @media (max-width: 1024px) {
     .game-card {
         grid-template-columns: 1fr;

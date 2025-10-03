@@ -360,7 +360,7 @@ window.addEventListener('load', () => {
 });
 
 // ============================================
-// Platform Filter (크래프톤 스타일)
+// Platform Filter
 // ============================================
 document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', function() {
