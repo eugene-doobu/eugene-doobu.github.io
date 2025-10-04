@@ -1,22 +1,25 @@
 {
   "nav": {
     "home": "ホーム",
-    "games": "ゲーム",
+    "gam  "news": {
+    "title": "最新ニュース",
+    "subtitle": "ゲームアップデートとイベント情報",
+    "viewAll": "全てのニュースを見る", "ゲーム",
     "news": "ニュース",
     "about": "について",
     "support": "サポート"
   },
   "hero": {
     "studioName": "おやつ食べるスタジオ",
-    "tagline": "革新的なゲーム体験を作るインディーゲームスタジオ",
-    "description": "新しい技術と創造的なアイデアでプレイヤーに特別な体験を提供します",
+    "tagline": "新しい技術でゲームを制作する一人開発スタジオ",
+    "description": "",
     "exploreGames": "ゲームを見る",
     "latestNews": "最新ニュース",
     "scrollDown": "スクロールダウン"
   },
   "games": {
-    "title": "🎮 私たちのゲーム",
-    "subtitle": "おやつ食べるスタジオが送るゲーム",
+    "title": "ゲーム",
+    "subtitle": "",
     "filterAll": "全て",
     "filterPC": "PC",
     "filterMobile": "モバイル",
@@ -42,7 +45,7 @@
     }
   },
   "news": {
-    "title": "📢 最新ニュース",
+    "title": "最新ニュース",
     "subtitle": "ゲームアップデートとイベント",
     "viewAll": "全てのニュースを見る",
     "badge": {
@@ -64,10 +67,10 @@
     }
   },
   "about": {
-    "title": "✨ About Studio",
+    "title": "About Studio",
     "heading": "おやつ食べるスタジオ",
-    "description1": "新しい技術と創造的なアイデアで特別なゲーム体験を作るインディーゲームスタジオです。",
-    "description2": "Unity、WebGPUなど様々な技術を活用して、プレイヤーに革新的で没入感のあるゲームを提供します。私たちの目標は単なるゲームを超えて、プレイヤーに感動を与える体験を作ることです。",
+    "description1": "新しい技術を素早く学習してゲームに適用する一人開発スタジオです。",
+    "description2": "完璧なゲームより面白い技術を素早く試すのが好きです。おやつはいつでも歓迎です🍪",
     "contact": "Contact & Links",
     "links": {
       "github": "GitHub",
@@ -76,16 +79,16 @@
       "youtube": "YouTube"
     },
     "values": {
-      "creativity": "創造性",
-      "creativityDesc": "新しいアイデアでユニークなゲーム体験",
-      "innovation": "革新",
-      "innovationDesc": "最新技術を活用した次世代ゲーム",
-      "passion": "情熱",
-      "passionDesc": "ゲームへの真心とプレイヤーへの愛"
+      "creativity": "技術実験",
+      "creativityDesc": "新技術を素早く試す",
+      "innovation": "開発速度",
+      "innovationDesc": "高速プロトタイピング",
+      "passion": "軽い気持ち",
+      "passionDesc": "面白いものを作ります"
     }
   },
   "footer": {
-    "tagline": "革新的なゲーム体験を作るインディースタジオ",
+    "tagline": "新しい技術でゲームを制作する一人開発スタジオ",
     "games": "ゲーム",
     "support": "サポート",
     "contactUs": "お問い合わせ",

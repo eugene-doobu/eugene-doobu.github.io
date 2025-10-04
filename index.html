@@ -48,9 +48,7 @@
             </p>
             <div class="hero-buttons">
                 <a href="#games" class="btn btn-primary" data-i18n="hero.exploreGames">게임 둘러보기</a>
-                <a href="#news" class="btn btn-secondary">
-                    <span>📢</span> <span data-i18n="hero.latestNews">최신 소식</span>
-                </a>
+                <a href="#news" class="btn btn-secondary" data-i18n="hero.latestNews">최신 소식</a>
             </div>
         </div>
     </section>
@@ -95,9 +93,7 @@
                         곧 공개될 새로운 프로젝트를 기대해주세요!
                     </p>
                     <div class="game-actions">
-                        <a href="https://github.com/eugene-doobu" target="_blank" class="btn btn-secondary">
-                            <span>🔔</span> <span data-i18n="games.followUs">팔로우하기</span>
-                        </a>
+                        <a href="https://github.com/eugene-doobu" target="_blank" class="btn btn-secondary" data-i18n="games.followUs">팔로우하기</a>
                     </div>
                 </div>
             </div>
@@ -122,15 +118,9 @@
                         실시간 오디오 처리와 시각적 피드백으로 새로운 차원의 사운드를 경험하세요.
                     </p>
                     <div class="game-actions">
-                        <a href="projects/3daudio/index.html" class="btn btn-play" target="_blank">
-                            <span>🎮</span> <span data-i18n="games.playNow">지금 플레이</span>
-                        </a>
-                        <a href="projects/3daudio/announcements.html" class="btn btn-info">
-                            <span>📢</span> <span data-i18n="games.news">소식</span>
-                        </a>
-                        <a href="https://github.com/eugene-doobu/eugene-doobu.github.io/issues?q=label%3A3daudio" target="_blank" class="btn btn-support">
-                            <span>💬</span> <span data-i18n="games.support">문의</span>
-                        </a>
+                        <a href="projects/3daudio/index.html" class="btn btn-play" target="_blank" data-i18n="games.playNow">지금 플레이</a>
+                        <a href="projects/3daudio/announcements.html" class="btn btn-info" data-i18n="games.news">소식</a>
+                        <a href="https://github.com/eugene-doobu/eugene-doobu.github.io/issues?q=label%3A3daudio" target="_blank" class="btn btn-support" data-i18n="games.support">문의</a>
                     </div>
                 </div>
             </div>
@@ -217,36 +207,28 @@
 
                     <h4 data-i18n="about.contact">Contact & Links</h4>
                     <div class="contact-links">
-                        <a href="https://github.com/eugene-doobu" target="_blank" class="contact-link">
-                            <span>📱</span> <span data-i18n="about.links.github">GitHub</span>
-                        </a>
-                        <a href="https://github.com/eugene-doobu/eugene-doobu.github.io/issues" target="_blank" class="contact-link">
-                            <span>�</span> <span data-i18n="about.links.support">Support</span>
-                        </a>
-                        <a href="https://velog.io/@eugene-doobu/posts" target="_blank" class="contact-link">
-                            <span>�</span> <span data-i18n="about.links.blog">Blog</span>
-                        </a>
-                        <a href="https://www.youtube.com/@SnackKillerCat" target="_blank" class="contact-link">
-                            <span>🎥</span> <span data-i18n="about.links.youtube">YouTube</span>
-                        </a>
+                        <a href="https://github.com/eugene-doobu" target="_blank" class="contact-link" data-i18n="about.links.github">GitHub</a>
+                        <a href="https://github.com/eugene-doobu/eugene-doobu.github.io/issues" target="_blank" class="contact-link" data-i18n="about.links.support">Support</a>
+                        <a href="https://velog.io/@eugene-doobu/posts" target="_blank" class="contact-link" data-i18n="about.links.blog">Blog</a>
+                        <a href="https://www.youtube.com/@SnackKillerCat" target="_blank" class="contact-link" data-i18n="about.links.youtube">YouTube</a>
                     </div>
                 </div>
 
                 <div class="about-visual">
                     <div class="studio-card">
-                        <div class="studio-icon">🎮</div>
-                        <h4 data-i18n="about.values.creativity">창의성</h4>
-                        <p data-i18n="about.values.creativityDesc">새로운 아이디어로 독특한 게임 경험</p>
+                        <img src="assets/icons/tech-experiment.png" alt="Tech Experiments" class="studio-icon-img" onerror="this.src='https://via.placeholder.com/80x80/ffffff/000000?text=Tech'">
+                        <h4 data-i18n="about.values.creativity">기술 실험</h4>
+                        <p data-i18n="about.values.creativityDesc">새로운 기술을 빠르게 시도</p>
                     </div>
                     <div class="studio-card">
-                        <div class="studio-icon">🚀</div>
-                        <h4 data-i18n="about.values.innovation">혁신</h4>
-                        <p data-i18n="about.values.innovationDesc">최신 기술을 활용한 차세대 게임</p>
+                        <img src="assets/icons/dev-speed.png" alt="Dev Speed" class="studio-icon-img" onerror="this.src='https://via.placeholder.com/80x80/ffffff/000000?text=Speed'">
+                        <h4 data-i18n="about.values.innovation">개발 속도</h4>
+                        <p data-i18n="about.values.innovationDesc">빠른 프로토타이핑과 반복</p>
                     </div>
                     <div class="studio-card">
-                        <div class="studio-icon">❤️</div>
-                        <h4 data-i18n="about.values.passion">열정</h4>
-                        <p data-i18n="about.values.passionDesc">게임에 대한 진심과 플레이어 사랑</p>
+                        <img src="assets/icons/light-hearted.png" alt="Light Hearted" class="studio-icon-img" onerror="this.src='https://via.placeholder.com/80x80/ffffff/000000?text=Fun'">
+                        <h4 data-i18n="about.values.passion">가벼운 마음</h4>
+                        <p data-i18n="about.values.passionDesc">재미있는 걸 만들어봅니다</p>
                     </div>
                 </div>
             </div>

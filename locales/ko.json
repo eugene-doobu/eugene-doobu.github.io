@@ -8,15 +8,15 @@
   },
   "hero": {
     "studioName": "간식축내는 스튜디오",
-    "tagline": "혁신적인 게임 경험을 만드는 인디 게임 스튜디오",
-    "description": "새로운 기술과 창의적인 아이디어로 플레이어에게 특별한 경험을 선사합니다",
+    "tagline": "새로운 기술로 게임을 제작하는 1인 개발 스튜디오",
+    "description": "",
     "exploreGames": "게임 둘러보기",
     "latestNews": "최신 소식",
     "scrollDown": "Scroll Down"
   },
   "games": {
-    "title": "🎮 우리의 게임",
-    "subtitle": "간식축내는 스튜디오가 선보이는 게임들",
+    "title": "게임",
+    "subtitle": "",
     "filterAll": "전체",
     "filterPC": "PC",
     "filterMobile": "모바일",
@@ -42,7 +42,7 @@
     }
   },
   "news": {
-    "title": "📢 최신 소식",
+    "title": "최신 소식",
     "subtitle": "게임 업데이트 및 이벤트 소식",
     "viewAll": "전체 소식 보기",
     "badge": {
@@ -64,10 +64,10 @@
     }
   },
   "about": {
-    "title": "✨ About Studio",
+    "title": "About Studio",
     "heading": "간식축내는 스튜디오",
-    "description1": "새로운 기술과 창의적인 아이디어로 특별한 게임 경험을 만드는 인디 게임 스튜디오입니다.",
-    "description2": "Unity, WebGPU 등 다양한 기술을 활용하여 플레이어들에게 혁신적이고 몰입감 있는 게임을 제공합니다. 우리의 목표는 단순한 게임을 넘어, 플레이어에게 감동을 주는 경험을 만드는 것입니다.",
+    "description1": "새로운 기술을 빠르게 학습하고 게임에 적용하는 1인 개발 스튜디오입니다.",
+    "description2": "완벽한 게임보다는 재미있는 기술을 빠르게 시도해보는 걸 좋아합니다. 간식은 언제나 환영입니다 🍪",
     "contact": "Contact & Links",
     "links": {
       "github": "GitHub",
@@ -76,16 +76,16 @@
       "youtube": "YouTube"
     },
     "values": {
-      "creativity": "창의성",
-      "creativityDesc": "새로운 아이디어로 독특한 게임 경험",
-      "innovation": "혁신",
-      "innovationDesc": "최신 기술을 활용한 차세대 게임",
-      "passion": "열정",
-      "passionDesc": "게임에 대한 진심과 플레이어 사랑"
+      "creativity": "기술 실험",
+      "creativityDesc": "새로운 기술을 빠르게 시도",
+      "innovation": "개발 속도",
+      "innovationDesc": "빠른 프로토타이핑과 반복",
+      "passion": "가벼운 마음",
+      "passionDesc": "재미있는 걸 만들어봅니다"
     }
   },
   "footer": {
-    "tagline": "혁신적인 게임 경험을 만드는 인디 스튜디오",
+    "tagline": "새로운 기술로 게임을 제작하는 1인 개발 스튜디오",
     "games": "Games",
     "support": "Support",
     "contactUs": "문의하기",

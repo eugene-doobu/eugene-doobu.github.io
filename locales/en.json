@@ -1,22 +1,25 @@
 {
   "nav": {
     "home": "Home",
-    "games": "Games",
+    "ga  "news": {
+    "title": "Latest News",
+    "subtitle": "Game updates and events",
+    "viewAll": "View All News",: "Games",
     "news": "News",
     "about": "About",
     "support": "Support"
   },
   "hero": {
     "studioName": "Snack Eater Studio",
-    "tagline": "Indie Game Studio Creating Innovative Gaming Experiences",
-    "description": "Delivering unique experiences to players with new technologies and creative ideas",
+    "tagline": "Solo game dev studio creating games with new tech",
+    "description": "",
     "exploreGames": "Explore Games",
     "latestNews": "Latest News",
     "scrollDown": "Scroll Down"
   },
   "games": {
-    "title": "🎮 Our Games",
-    "subtitle": "Games from Snack Eater Studio",
+    "title": "Games",
+    "subtitle": "",
     "filterAll": "All",
     "filterPC": "PC",
     "filterMobile": "Mobile",
@@ -42,7 +45,7 @@
     }
   },
   "news": {
-    "title": "📢 Latest News",
+    "title": "Latest News",
     "subtitle": "Game Updates and Events",
     "viewAll": "View All News",
     "badge": {
@@ -64,10 +67,10 @@
     }
   },
   "about": {
-    "title": "✨ About Studio",
+    "title": "About Studio",
     "heading": "Snack Eater Studio",
-    "description1": "An indie game studio creating special gaming experiences with new technologies and creative ideas.",
-    "description2": "We provide innovative and immersive games to players using various technologies like Unity and WebGPU. Our goal is to create experiences that move players beyond just making games.",
+    "description1": "Solo dev studio that learns new tech fast and applies it to games.",
+    "description2": "I prefer trying out cool tech quickly over perfecting games. Snacks are always welcome 🍪",
     "contact": "Contact & Links",
     "links": {
       "github": "GitHub",
@@ -76,16 +79,16 @@
       "youtube": "YouTube"
     },
     "values": {
-      "creativity": "Creativity",
-      "creativityDesc": "Unique gaming experiences with new ideas",
-      "innovation": "Innovation",
-      "innovationDesc": "Next-gen games with cutting-edge tech",
-      "passion": "Passion",
-      "passionDesc": "Sincere love for games and players"
+      "creativity": "Tech Experiments",
+      "creativityDesc": "Trying new tech fast",
+      "innovation": "Dev Speed",
+      "innovationDesc": "Quick prototyping & iteration",
+      "passion": "Light Hearted",
+      "passionDesc": "Making fun stuff"
     }
   },
   "footer": {
-    "tagline": "Indie studio creating innovative gaming experiences",
+    "tagline": "Solo game dev studio creating games with new tech",
     "games": "Games",
     "support": "Support",
     "contactUs": "Contact Us",

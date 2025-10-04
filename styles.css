@@ -1258,6 +1258,18 @@ a:visited {
     margin-bottom: var(--spacing-sm);
 }
 
+.studio-icon-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: var(--spacing-sm);
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+[data-theme="light"] .studio-icon-img {
+    filter: brightness(0) invert(0);
+}
+
 .studio-card h4 {
     font-size: 1.3rem;
     margin-bottom: var(--spacing-sm);
