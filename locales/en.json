@@ -1,10 +1,8 @@
 {
   "nav": {
     "home": "Home",
-    "ga  "news": {
-    "title": "Latest News",
-    "subtitle": "Game updates and events",
-    "viewAll": "View All News",: "Games",
+    "games": "Games",
+    "models": "Models",
     "news": "News",
     "about": "About",
     "support": "Support"

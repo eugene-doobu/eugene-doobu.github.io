@@ -1,10 +1,8 @@
 {
   "nav": {
     "home": "ホーム",
-    "gam  "news": {
-    "title": "最新ニュース",
-    "subtitle": "ゲームアップデートとイベント情報",
-    "viewAll": "全てのニュースを見る", "ゲーム",
+    "games": "ゲーム",
+    "models": "モデル",
     "news": "ニュース",
     "about": "について",
     "support": "サポート"

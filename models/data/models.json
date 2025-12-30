@@ -1,0 +1,51 @@
+{
+  "models": [
+    {
+      "id": "sample-character",
+      "name": "Sample Character",
+      "description": "A sample 3D character model for testing",
+      "thumbnail": "https://via.placeholder.com/400x300/667eea/ffffff?text=Sample+Model",
+      "files": {
+        "glb": "https://example.com/models/sample.glb",
+        "fbx": "https://example.com/models/sample.fbx",
+        "obj": "https://example.com/models/sample.obj"
+      },
+      "tags": ["character", "humanoid", "rigged"],
+      "category": "character",
+      "polyCount": 12500,
+      "license": "CC BY 4.0",
+      "createdAt": "2025-01-15",
+      "featured": true
+    },
+    {
+      "id": "sample-prop",
+      "name": "Sample Prop",
+      "description": "A sample prop model for testing",
+      "thumbnail": "https://via.placeholder.com/400x300/764ba2/ffffff?text=Sample+Prop",
+      "files": {
+        "glb": "https://example.com/models/prop.glb"
+      },
+      "tags": ["prop", "furniture", "lowpoly"],
+      "category": "prop",
+      "polyCount": 2500,
+      "license": "CC BY 4.0",
+      "createdAt": "2025-01-10",
+      "featured": false
+    }
+  ],
+  "categories": [
+    { "id": "all", "name": "All", "nameKo": "전체" },
+    { "id": "character", "name": "Character", "nameKo": "캐릭터" },
+    { "id": "prop", "name": "Prop", "nameKo": "소품" },
+    { "id": "environment", "name": "Environment", "nameKo": "환경" },
+    { "id": "vehicle", "name": "Vehicle", "nameKo": "탈것" },
+    { "id": "weapon", "name": "Weapon", "nameKo": "무기" }
+  ],
+  "tags": [
+    "character", "humanoid", "rigged", "animated",
+    "prop", "furniture", "lowpoly", "highpoly",
+    "environment", "nature", "urban", "fantasy",
+    "vehicle", "car", "aircraft", "ship",
+    "weapon", "sword", "gun", "medieval"
+  ]
+}
