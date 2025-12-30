@@ -1355,6 +1355,98 @@ a:visited {
     }
 }
 
+/* ============================================
+   Advertisement Styles
+   ============================================ */
+.ad-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: var(--spacing-sm);
+    text-align: center;
+    overflow: hidden;
+}
+
+.ad-container::before {
+    content: '광고';
+    display: block;
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    opacity: 0.6;
+}
+
+/* Header Ad */
+.ad-header {
+    margin-top: 70px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+/* Games Section with Sidebar */
+.games-with-sidebar {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: var(--spacing-md);
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Sidebar Ad */
+.ad-sidebar {
+    position: relative;
+}
+
+.ad-sticky {
+    position: sticky;
+    top: 100px;
+    width: 160px;
+}
+
+/* Between Games Ad */
+.ad-between-games {
+    max-width: 100%;
+    margin: var(--spacing-md) 0;
+}
+
+/* Before Footer Ad */
+.ad-before-footer {
+    max-width: 1200px;
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+/* Responsive Ad Styles */
+@media (max-width: 1200px) {
+    .games-with-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .ad-sidebar {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .ad-header {
+        margin-top: 60px;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+
+    .ad-before-footer {
+        margin: var(--spacing-md) auto;
+    }
+
+    .ad-container::before {
+        font-size: 0.6rem;
+    }
+}
+
 @media (max-width: 768px) {
     .studio-title {
         font-size: 2.5rem;
