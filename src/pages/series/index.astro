@@ -1,0 +1,79 @@
+---
+import { getCollection } from "astro:content"
+import PageLayout from "@layouts/PageLayout.astro"
+import TopLayout from "@layouts/TopLayout.astro"
+import BottomLayout from "@layouts/BottomLayout.astro"
+
+const allPosts = await getCollection("blog")
+
+// 시리즈별로 그룹화
+const seriesMap = new Map<string, { count: number; latestDate: Date }>()
+
+allPosts
+  .filter((post) => post.data.series && !post.data.draft)
+  .forEach((post) => {
+    const seriesName = post.data.series!.name
+    const existing = seriesMap.get(seriesName)
+    if (existing) {
+      existing.count++
+      if (post.data.date > existing.latestDate) {
+        existing.latestDate = post.data.date
+      }
+    } else {
+      seriesMap.set(seriesName, { count: 1, latestDate: post.data.date })
+    }
+  })
+
+// 최신 업데이트 순으로 정렬
+const seriesList = [...seriesMap.entries()]
+  .map(([name, data]) => ({ name, ...data }))
+  .sort((a, b) => b.latestDate.getTime() - a.latestDate.getTime())
+---
+
+<PageLayout title="시리즈" description="블로그 시리즈 목록">
+  <TopLayout>
+    <div class="animate">
+      <h1 class="text-3xl font-semibold text-black dark:text-white mt-2">
+        시리즈
+      </h1>
+      <div class="mt-1 opacity-75">
+        연재 글 모음
+      </div>
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <div class="animate">
+      {seriesList.length === 0 ? (
+        <div class="text-center py-12 opacity-75">
+          아직 시리즈가 없습니다.
+        </div>
+      ) : (
+        <div class="grid gap-4">
+          {seriesList.map((series) => (
+            <a
+              href={`/series/${series.name}`}
+              class="group flex items-center gap-4 p-4 border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors"
+            >
+              <div class="flex items-center justify-center w-12 h-12 rounded-lg bg-black/10 dark:bg-white/10">
+                <svg class="size-6 stroke-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+                </svg>
+              </div>
+              <div class="flex-1">
+                <div class="font-semibold text-black dark:text-white group-hover:underline">
+                  {series.name}
+                </div>
+                <div class="text-sm opacity-75">
+                  {series.count}개의 글
+                </div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="stroke-current opacity-50 group-hover:opacity-100 transition-opacity">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </a>
+          ))}
+        </div>
+      )}
+    </div>
+  </BottomLayout>
+</PageLayout>

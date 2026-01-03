@@ -1,9 +1,25 @@
 ---
 import { SITE, LINKS } from "@consts"
 import { cn } from "@lib/utils"
-const { pathname } = Astro.url
-const subpath = pathname.match(/[^/]+/g)
 import Container from "@components/Container.astro"
+
+const { pathname } = Astro.url
+
+// 현재 경로가 어떤 링크에 해당하는지 확인
+function isActiveLink(linkHref: string): boolean {
+  if (linkHref === "/") {
+    return pathname === "/"
+  }
+  // 정확히 일치하거나, 해당 경로로 시작하는 경우 (단, 더 구체적인 경로가 있으면 제외)
+  if (pathname === linkHref || pathname.startsWith(linkHref + "/")) {
+    // 더 구체적인 링크가 있는지 확인
+    const moreSpecificLink = LINKS.find(
+      (l) => l.HREF !== linkHref && l.HREF.startsWith(linkHref) && pathname.startsWith(l.HREF)
+    )
+    return !moreSpecificLink
+  }
+  return false
+}
 ---
 
 <header id="header" class="fixed top-0 w-full h-16 z-50 ">
@@ -24,7 +40,7 @@ import Container from "@components/Container.astro"
       <nav class="hidden md:flex items-center justify-center text-sm gap-1">
         {
           LINKS.map((LINK) => (
-            <a href={LINK.HREF} class={cn("h-8 rounded-full px-3 text-current", "flex items-center justify-center", "transition-colors duration-300 ease-in-out", pathname === LINK.HREF || "/" + subpath?.[0] === LINK.HREF ? "bg-black dark:bg-white text-white dark:text-black" : "hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white")}>
+            <a href={LINK.HREF} class={cn("h-8 rounded-full px-3 text-current", "flex items-center justify-center", "transition-colors duration-300 ease-in-out", isActiveLink(LINK.HREF) ? "bg-black dark:bg-white text-white dark:text-black" : "hover:bg-black/5 dark:hover:bg-white/20 hover:text-black dark:hover:text-white")}>
               {LINK.TEXT}
             </a>
           ))
@@ -33,7 +49,7 @@ import Container from "@components/Container.astro"
     </div>
 
     <div class="buttons absolute right-0 top-1/2 -translate-y-1/2 flex gap-1">
-      <a href="/search" aria-label={`Search blog posts and projects on ${SITE.TITLE}`} class={cn("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out", pathname === "/search" || "/" + subpath?.[0] === "/search" ? "pointer-events-none bg-black dark:bg-white text-white dark:text-black" : "")}>
+      <a href="/search" aria-label={`Search blog posts and projects on ${SITE.TITLE}`} class={cn("hidden md:flex", "size-9 rounded-full p-2 items-center justify-center", "bg-transparent hover:bg-black/5 dark:hover:bg-white/20", "stroke-current hover:stroke-black hover:dark:stroke-white", "border border-black/10 dark:border-white/25", "transition-colors duration-300 ease-in-out", pathname === "/search" ? "pointer-events-none bg-black dark:bg-white text-white dark:text-black" : "")}>
         <svg class="size-full">
           <use href="/ui.svg#search"></use>
         </svg>

@@ -1,0 +1,78 @@
+---
+import type { CollectionEntry } from "astro:content"
+import { getCollection } from "astro:content"
+
+type Props = {
+  entry: CollectionEntry<"blog">
+}
+
+const { entry } = Astro.props
+const { series } = entry.data
+
+if (!series) {
+  return
+}
+
+const allPosts = await getCollection("blog")
+const seriesPosts = allPosts
+  .filter((post) => post.data.series?.name === series.name && !post.data.draft)
+  .sort((a, b) => (a.data.series?.order ?? 0) - (b.data.series?.order ?? 0))
+
+const currentIndex = seriesPosts.findIndex((post) => post.slug === entry.slug)
+const prevPost = currentIndex > 0 ? seriesPosts[currentIndex - 1] : null
+const nextPost = currentIndex < seriesPosts.length - 1 ? seriesPosts[currentIndex + 1] : null
+---
+
+<div class="series-nav my-8 p-4 border rounded-lg border-black/15 dark:border-white/20 bg-black/5 dark:bg-white/5">
+  <div class="flex items-center gap-2 mb-3">
+    <svg class="size-5 stroke-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+    </svg>
+    <span class="font-semibold text-black dark:text-white">{series.name}</span>
+    <span class="text-sm opacity-75">({series.order}/{seriesPosts.length})</span>
+  </div>
+
+  <details class="mb-3">
+    <summary class="cursor-pointer text-sm opacity-75 hover:opacity-100 transition-opacity">
+      시리즈 목차 보기
+    </summary>
+    <ol class="mt-2 ml-4 space-y-1 text-sm list-decimal">
+      {seriesPosts.map((post, idx) => (
+        <li class={post.slug === entry.slug ? "font-semibold text-black dark:text-white" : ""}>
+          {post.slug === entry.slug ? (
+            <span>{post.data.title}</span>
+          ) : (
+            <a href={`/blog/${post.slug}`} class="hover:text-black dark:hover:text-white transition-colors">
+              {post.data.title}
+            </a>
+          )}
+        </li>
+      ))}
+    </ol>
+  </details>
+
+  <div class="flex gap-2 text-sm">
+    {prevPost ? (
+      <a
+        href={`/blog/${prevPost.slug}`}
+        class="flex-1 p-2 border rounded hover:bg-black/5 dark:hover:bg-white/10 border-black/15 dark:border-white/20 transition-colors"
+      >
+        <div class="text-xs opacity-75">이전 글</div>
+        <div class="truncate">{prevPost.data.title}</div>
+      </a>
+    ) : (
+      <div class="flex-1"></div>
+    )}
+    {nextPost ? (
+      <a
+        href={`/blog/${nextPost.slug}`}
+        class="flex-1 p-2 border rounded hover:bg-black/5 dark:hover:bg-white/10 border-black/15 dark:border-white/20 transition-colors text-right"
+      >
+        <div class="text-xs opacity-75">다음 글</div>
+        <div class="truncate">{nextPost.data.title}</div>
+      </a>
+    ) : (
+      <div class="flex-1"></div>
+    )}
+  </div>
+</div>

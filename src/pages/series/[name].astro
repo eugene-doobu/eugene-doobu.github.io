@@ -1,0 +1,89 @@
+---
+import { getCollection } from "astro:content"
+import PageLayout from "@layouts/PageLayout.astro"
+import TopLayout from "@layouts/TopLayout.astro"
+import BottomLayout from "@layouts/BottomLayout.astro"
+import { formatDate } from "@lib/utils"
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog")
+
+  // 시리즈가 있는 포스트만 필터링하고 시리즈 이름 추출
+  const seriesNames = [
+    ...new Set(
+      posts
+        .filter((post) => post.data.series && !post.data.draft)
+        .map((post) => post.data.series!.name)
+    ),
+  ]
+
+  return seriesNames.map((name) => ({
+    params: { name },
+    props: { seriesName: name },
+  }))
+}
+
+const { seriesName } = Astro.props
+
+const allPosts = await getCollection("blog")
+const seriesPosts = allPosts
+  .filter((post) => post.data.series?.name === seriesName && !post.data.draft)
+  .sort((a, b) => (a.data.series?.order ?? 0) - (b.data.series?.order ?? 0))
+---
+
+<PageLayout title={`시리즈: ${seriesName}`} description={`${seriesName} 시리즈의 모든 글`}>
+  <TopLayout>
+    <div class="animate">
+      <a href="/series" class="group w-fit p-1.5 gap-1.5 text-sm flex items-center border rounded hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors duration-300 ease-in-out">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="stroke-current group-hover:stroke-black group-hover:dark:stroke-white">
+          <line x1="19" y1="12" x2="5" y2="12" class="scale-x-0 group-hover:scale-x-100 translate-x-3 group-hover:translate-x-0 transition-all duration-300 ease-in-out" />
+          <polyline points="12 19 5 12 12 5" class="translate-x-1 group-hover:translate-x-0 transition-all duration-300 ease-in-out" />
+        </svg>
+        <div class="w-full group-hover:text-black group-hover:dark:text-white transition-colors duration-300 ease-in-out">
+          Back to series
+        </div>
+      </a>
+      <div class="flex items-center gap-2 mt-12 mb-2">
+        <svg class="size-6 stroke-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+        </svg>
+        <span class="text-sm uppercase opacity-75">시리즈</span>
+      </div>
+      <h1 class="text-3xl font-semibold text-black dark:text-white">
+        {seriesName}
+      </h1>
+      <div class="mt-1 opacity-75">
+        총 {seriesPosts.length}개의 글
+      </div>
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <div class="animate">
+      <ol class="space-y-4">
+        {seriesPosts.map((post, idx) => (
+          <li>
+            <a
+              href={`/blog/${post.slug}`}
+              class="group flex gap-4 p-4 border rounded-lg hover:bg-black/5 hover:dark:bg-white/10 border-black/15 dark:border-white/20 transition-colors"
+            >
+              <div class="flex items-center justify-center w-10 h-10 rounded-full bg-black/10 dark:bg-white/10 text-lg font-semibold text-black dark:text-white shrink-0">
+                {idx + 1}
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="font-semibold text-black dark:text-white group-hover:underline">
+                  {post.data.title}
+                </div>
+                <div class="text-sm opacity-75 mt-1 line-clamp-2">
+                  {post.data.summary}
+                </div>
+                <div class="text-xs opacity-50 mt-2">
+                  {formatDate(post.data.date)}
+                </div>
+              </div>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </BottomLayout>
+</PageLayout>
