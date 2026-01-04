@@ -1,0 +1,204 @@
+---
+import { getCollection } from "astro:content"
+import PageLayout from "@layouts/PageLayout.astro"
+import TopLayout from "@layouts/TopLayout.astro"
+import BottomLayout from "@layouts/BottomLayout.astro"
+import { WORK } from "@consts"
+
+const collection = await getCollection("work")
+
+collection.sort((a, b) => new Date(b.data.dateStart).getTime() - new Date(a.data.dateStart).getTime())
+
+const work = await Promise.all(
+  collection.map(async (item) => {
+    const { Content } = await item.render()
+    return { ...item, Content }
+  })
+)
+
+function formatWorkDate(input: Date | string) {
+  if (typeof input === "string") return input
+
+  const month = input.toLocaleDateString("en-US", {
+    month: "short",
+  })
+
+  const year = new Date(input).getFullYear()
+  return `${month} ${year}`
+}
+
+const education = [
+  {
+    school: "한국방송통신대학교",
+    degree: "컴퓨터공학 학사",
+    period: "2020 - 2022",
+    note: "학점 4.4",
+  },
+  {
+    school: "인천전자마이스터고등학교",
+    degree: "전자제어과",
+    period: "2013.03 - 2016.02",
+    note: "Atmega128, ARM 프로세서를 활용한 프로젝트 수행",
+  },
+]
+
+const awards = [
+  {
+    title: "Software Competition (Silver)",
+    issuer: "Korea National Open University",
+    date: "2022.08",
+    description: "VR 메타버스 공간 프로젝트 (KnouVerse)",
+    link: "https://github.com/eugene-doobu/KnouVerse",
+  },
+  {
+    title: "Edutech Elementary Education Exhibition - Application Prize",
+    issuer: "Edutech Elementary Education Exhibition",
+    date: "2021.10",
+    description: "알공2 - 교육용 메타버스 앱 개발",
+  },
+  {
+    title: "Software Competition (Bronze)",
+    issuer: "Korea National Open University",
+    date: "2021.08",
+    description: "Compute Shader와 GPU Instancing을 활용한 Boid Simulation",
+    link: "https://www.youtube.com/watch?v=5AVVDXJSV3g",
+  },
+  {
+    title: "MDP Assignment Presentation (Bronze)",
+    issuer: "Incheon Electronic Meister High School",
+    date: "2014.11",
+    description: "Atmega128을 활용한 심박수 측정기 프로젝트",
+  },
+]
+
+const tabs = [
+  { id: "work", label: "경력" },
+  { id: "education", label: "학력" },
+  { id: "awards", label: "수상" },
+]
+---
+
+<PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
+  <TopLayout>
+    <div class="animate page-heading">
+      {WORK.TITLE}
+    </div>
+  </TopLayout>
+  <BottomLayout>
+    <!-- 탭 버튼 -->
+    <div class="animate flex gap-1 border-b border-black/10 dark:border-white/25 mb-8">
+      {tabs.map((tab, index) => (
+        <button
+          data-tab={tab.id}
+          class:list={[
+            "tab-btn px-4 py-3 text-sm font-medium transition-all duration-300",
+            "border-b-2 -mb-[1px]",
+            index === 0
+              ? "border-black dark:border-white text-black dark:text-white"
+              : "border-transparent text-black/50 dark:text-white/50 hover:text-black dark:hover:text-white"
+          ]}
+        >
+          {tab.label}
+        </button>
+      ))}
+    </div>
+
+    <!-- 경력 탭 -->
+    <div id="tab-work" class="tab-content">
+      <ul>
+        {
+          work.map((entry) => (
+            <li class="animate border-b border-black/10 dark:border-white/25 mt-4 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none">
+              <div class="text-sm uppercase mb-4">
+                {formatWorkDate(entry.data.dateStart)} - {formatWorkDate(entry.data.dateEnd)}
+              </div>
+              <div class="text-black dark:text-white font-semibold">
+                {entry.data.company}
+              </div>
+              <div class="text-sm font-semibold">
+                {entry.data.role}
+              </div>
+              <article class="prose dark:prose-invert">
+                <entry.Content />
+              </article>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- 학력 탭 -->
+    <div id="tab-education" class="tab-content hidden">
+      <ul>
+        {
+          education.map((edu) => (
+            <li class="animate border-b border-black/10 dark:border-white/25 mt-4 py-6 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none">
+              <div class="text-sm uppercase mb-2">{edu.period}</div>
+              <div class="text-black dark:text-white font-semibold">{edu.school}</div>
+              <div class="text-sm font-semibold">{edu.degree}</div>
+              {edu.note && <div class="text-sm mt-2">{edu.note}</div>}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- 수상 탭 -->
+    <div id="tab-awards" class="tab-content hidden">
+      <ul>
+        {
+          awards.map((award) => (
+            <li class="animate border-b border-black/10 dark:border-white/25 mt-4 py-6 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none">
+              <div class="text-sm uppercase mb-2">{award.date}</div>
+              <div class="text-black dark:text-white font-semibold">{award.title}</div>
+              <div class="text-sm font-semibold">{award.issuer}</div>
+              <div class="text-sm mt-2">{award.description}</div>
+              {award.link && (
+                <a href={award.link} target="_blank" class="text-sm text-blue-500 hover:underline mt-1 inline-block">
+                  프로젝트 보기 &rarr;
+                </a>
+              )}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </BottomLayout>
+</PageLayout>
+
+<script is:inline>
+function initTabs() {
+  const tabBtns = document.querySelectorAll('.tab-btn')
+  const tabContents = document.querySelectorAll('.tab-content')
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tabId = btn.getAttribute('data-tab')
+
+      // 모든 버튼 비활성화 스타일
+      tabBtns.forEach(b => {
+        b.classList.remove('border-black', 'dark:border-white', 'text-black', 'dark:text-white')
+        b.classList.add('border-transparent', 'text-black/50', 'dark:text-white/50')
+      })
+
+      // 클릭한 버튼 활성화 스타일
+      btn.classList.remove('border-transparent', 'text-black/50', 'dark:text-white/50')
+      btn.classList.add('border-black', 'dark:border-white', 'text-black', 'dark:text-white')
+
+      // 모든 콘텐츠 숨기기
+      tabContents.forEach(content => {
+        content.classList.add('hidden')
+      })
+
+      // 선택한 콘텐츠 표시
+      const selectedContent = document.getElementById(`tab-${tabId}`)
+      if (selectedContent) {
+        selectedContent.classList.remove('hidden')
+      }
+    })
+  })
+}
+
+document.addEventListener('astro:after-swap', initTabs)
+initTabs()
+</script>

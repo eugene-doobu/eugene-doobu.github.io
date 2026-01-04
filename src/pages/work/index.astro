@@ -26,6 +26,73 @@ function formatWorkDate(input: Date | string) {
   const year = new Date(input).getFullYear()
   return `${month} ${year}`
 }
+
+const education = [
+  {
+    school: "한국방송통신대학교",
+    degree: "컴퓨터공학 학사",
+    period: "2020 - 2022",
+    note: "학점 4.4",
+  },
+  {
+    school: "인천전자마이스터고등학교",
+    degree: "전자제어과",
+    period: "2013.03 - 2016.02",
+    note: "C언어와 회로설계를 기반으로 Atmega128 및 ARM 프로세서를 활용한 임베디드 프로젝트 수행",
+  },
+]
+
+const awards = [
+  {
+    title: "Software Competition (Silver)",
+    issuer: "Korea National Open University",
+    date: "2022.08",
+    description: "VR 메타버스 공간 프로젝트 (KnouVerse)",
+    link: "https://github.com/eugene-doobu/KnouVerse",
+  },
+  {
+    title: "Edutech Elementary Education Exhibition - Application Prize",
+    issuer: "Edutech Elementary Education Exhibition",
+    date: "2021.10",
+    description: "알공2 - 교육용 메타버스 앱 개발",
+  },
+  {
+    title: "Software Competition (Bronze)",
+    issuer: "Korea National Open University",
+    date: "2021.08",
+    description: "Compute Shader와 GPU Instancing을 활용한 Boid Simulation",
+    link: "https://www.youtube.com/watch?v=5AVVDXJSV3g",
+  },
+  {
+    title: "MDP Assignment Presentation (Bronze)",
+    issuer: "Incheon Electronic Meister High School",
+    date: "2014.11",
+    description: "Atmega128을 활용한 심박수 측정기 프로젝트",
+  },
+]
+
+const activities = [
+  {
+    title: "인천전자마이스터고 멘토링 강사",
+    description: "개발자 취업전략",
+    date: "2024",
+  },
+  {
+    title: "우아한스터디 겨울시즌",
+    description: "8 Weeks Later",
+    date: "2023",
+  },
+  {
+    title: "모두의연구소 Experimental Game LAB",
+    description: "게임 개발 연구 모임",
+    date: "2023",
+  },
+  {
+    title: "인천전자마이스터고 게인미 동아리 강사",
+    description: "VR 및 게임콘텐츠 제작 - 2학기",
+    date: "2021",
+  },
+]
 ---
 
 <PageLayout title={WORK.TITLE} description={WORK.DESCRIPTION}>
@@ -35,25 +102,125 @@ function formatWorkDate(input: Date | string) {
     </div>
   </TopLayout>
   <BottomLayout>
-    <ul>
-      { 
-        work.map((entry) => (
-          <li class="animate border-b border-black/10 dark:border-white/25 mt-4 py-8 first-of-type:mt-0 first-of-type:pt-0 last-of-type:border-none">
-            <div class="text-sm uppercase mb-4">
-              {formatWorkDate(entry.data.dateStart)} - {formatWorkDate(entry.data.dateEnd)}
-            </div>
-            <div class="text-black dark:text-white font-semibold">
-              {entry.data.company}
-            </div>
-            <div class="text-sm font-semibold">
-              {entry.data.role}
-            </div>
-            <article class="prose dark:prose-invert">
-              <entry.Content />
-            </article>
-          </li>
-        ))
-      }
-    </ul>
+    <!-- 경력 섹션 -->
+    <section class="animate mb-10">
+      <div class="rounded-xl border border-black/15 dark:border-white/20 p-6">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="p-2 rounded-lg bg-black/5 dark:bg-white/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black/70 dark:text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h2 class="text-lg font-semibold text-black dark:text-white">경력</h2>
+        </div>
+        <ul class="space-y-6">
+          {
+            work.map((entry) => (
+              <li class="border-l-2 border-black/20 dark:border-white/20 pl-4">
+                <div class="text-xs uppercase text-black/50 dark:text-white/50 mb-1">
+                  {formatWorkDate(entry.data.dateStart)} - {formatWorkDate(entry.data.dateEnd)}
+                </div>
+                <div class="text-black dark:text-white font-semibold">
+                  {entry.data.company}
+                </div>
+                <div class="text-sm text-black/70 dark:text-white/70">
+                  {entry.data.role}
+                </div>
+                <div class="text-sm text-black/70 dark:text-white/70 mt-2 [&>p]:mb-2 [&>ul]:mb-0 [&>ul]:mt-1 [&>ul]:list-disc [&>ul]:pl-4 [&>ul>li]:mb-0 [&>p:last-child]:mb-0">
+                  <entry.Content />
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- 학력 섹션 -->
+    <section class="animate mb-10">
+      <div class="rounded-xl border border-black/15 dark:border-white/20 p-6">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="p-2 rounded-lg bg-black/5 dark:bg-white/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black/70 dark:text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M12 14l9-5-9-5-9 5 9 5z" />
+              <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+            </svg>
+          </div>
+          <h2 class="text-lg font-semibold text-black dark:text-white">학력</h2>
+        </div>
+        <ul class="space-y-6">
+          {
+            education.map((edu) => (
+              <li class="border-l-2 border-black/20 dark:border-white/20 pl-4">
+                <div class="text-xs uppercase text-black/50 dark:text-white/50 mb-1">{edu.period}</div>
+                <div class="text-black dark:text-white font-semibold">{edu.school}</div>
+                <div class="text-sm text-black/70 dark:text-white/70">{edu.degree}</div>
+                {edu.note && <div class="text-sm text-black/50 dark:text-white/50 mt-1">{edu.note}</div>}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- 수상 섹션 -->
+    <section class="animate mb-10">
+      <div class="rounded-xl border border-black/15 dark:border-white/20 p-6">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="p-2 rounded-lg bg-black/5 dark:bg-white/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black/70 dark:text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+          </div>
+          <h2 class="text-lg font-semibold text-black dark:text-white">수상</h2>
+        </div>
+        <ul class="space-y-6">
+          {
+            awards.map((award) => (
+              <li class="border-l-2 border-black/20 dark:border-white/20 pl-4">
+                <div class="text-xs uppercase text-black/50 dark:text-white/50 mb-1">{award.date}</div>
+                <div class="text-black dark:text-white font-semibold">{award.title}</div>
+                <div class="text-sm text-black/70 dark:text-white/70">{award.issuer}</div>
+                <div class="text-sm text-black/50 dark:text-white/50 mt-1">{award.description}</div>
+                {award.link && (
+                  <a href={award.link} target="_blank" class="inline-flex items-center gap-1 text-sm text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white hover:underline mt-2 transition-colors duration-300">
+                    프로젝트 보기
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                )}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- 기타활동 섹션 -->
+    <section class="animate">
+      <div class="rounded-xl border border-black/15 dark:border-white/20 p-6">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="p-2 rounded-lg bg-black/5 dark:bg-white/10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-black/70 dark:text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+          <h2 class="text-lg font-semibold text-black dark:text-white">기타활동</h2>
+        </div>
+        <ul class="space-y-6">
+          {
+            activities.map((activity) => (
+              <li class="border-l-2 border-black/20 dark:border-white/20 pl-4">
+                <div class="text-xs uppercase text-black/50 dark:text-white/50 mb-1">{activity.date}</div>
+                <div class="text-black dark:text-white font-semibold">{activity.title}</div>
+                <div class="text-sm text-black/70 dark:text-white/70">{activity.description}</div>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
   </BottomLayout>
 </PageLayout>
